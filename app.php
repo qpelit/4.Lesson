@@ -1,4 +1,5 @@
 <?php
+$everything_was_okay = true;
 	//check if there is variable in the URL
 		//**********************
 	//TO validation
@@ -6,6 +7,7 @@
 		if(isset($_GET["to"])){
 		
 	if(empty($_GET["to"])){
+        $everything_was_okay = false;
 		echo "Please enter TO"."<br>";
 		}
 		else {
@@ -13,7 +15,7 @@
 		}
 	}
 	else{
-		
+		$everything_was_okay = false;
 	}
 	//**********************
 	//From validation
@@ -21,6 +23,7 @@
 	if(isset($_GET["from"])){
 		
 	if(empty($_GET["from"])){
+          $everything_was_okay = false;
 		echo "Please enter From"."<br>";
 		}
 		else {
@@ -28,7 +31,7 @@
 		}
 	}
 	else{
-		
+			$everything_was_okay = false;
 	}
 	//**********************
 	//message validation
@@ -36,6 +39,7 @@
 	if(isset($_GET["message"])){
 		
 	if(empty($_GET["message"])){
+          $everything_was_okay = false;
 		echo "Please enter a message"."<br>";
 		}
 		else {
@@ -43,22 +47,22 @@
 		}
 	}
 	else{
-		
+			$everything_was_okay = false;
 	}
 
 // Getting the message from adddress
 //if there is ?name=.. then $_GET["message"]
 
+
+//************************
+//********Save to DB*******
+//************************
 /*
-$my_message = $_GET["message"];
-$my_to = $_GET["to"];
-$my_from = $_GET["from"];
-echo "To : ".$my_to;
-echo('<br>');
-echo "From : ".$my_from;
-echo('<br>');
-echo " Message :".$my_message;
+
+
 */
+if($everything_was_okay ==true)
+    echo "Saving to database..."
 ?>
 <h2> First application </h2>
 
